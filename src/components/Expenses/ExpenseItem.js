@@ -5,25 +5,29 @@ import Card from "../UI/Card";
 import './ExpenseItem.css'
 
 function ExpenseItem(props) {
+    // console.log('ExpenseItem props check01', props)
+
     const [title, setTitle] = useState(props.title);
+
 
     const clickHandler = () => {
         setTitle('Updated!');
         console.log('click')
     }
-    // console.log('ExpenseItem props check', props)
-    // if (props.data === undefined){
-    //     console.log('ExpenseItem props check is undefined', props.data)
-    // }
+    // console.log('ExpenseItem props check02', props)
+    // console.table({title,'r': props, 't': props.amount})
     return (
-        <Card className="expense-item">
-            <ExpenseDate date={props.date}/>
-            <div className="expense-item__description">
-                <h2>{title}</h2>
-                <div className="expense-item__price">${props.amount}</div>
-            </div>
-            <button onClick={clickHandler}>Change Title</button>
-        </Card>
+        <li>
+            <Card className="expense-item">
+                <ExpenseDate date={props.date}/>
+                <div className="expense-item__description">
+                    <h2>{title}</h2>
+                    <div className="expense-item__price">${props.amount}</div>
+                </div>
+                <button onClick={clickHandler}>Change Title</button>
+            </Card>
+        </li>
+
     )
 }
 

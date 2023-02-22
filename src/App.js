@@ -29,25 +29,36 @@ const DUMMY_EXPENSES = [
         title: 'New Desk (Wooden)',
         amount: 450,
         date: new Date(2021, 5, 12),
-    },
+    }
 ];
 
 const App = () => {
+
+
+
+
+
     const [expenses, setExpenses] = useState(DUMMY_EXPENSES)
-
-
     const addExpenseHandler = expense => {
         setExpenses(prevExpenses => {
-            return [expense, ...prevExpenses]
+            const result = [expense, ...prevExpenses]
+            // console.log('002' ,result, prevExpenses)
+            return result
         });
         // console.log('In App.js')
         // console.log(expense, ...expenses )
     }
 
+
+    const [filter, setFilter] = useState('all')
+    const FilterCondition = con =>{
+        setFilter(prevCon => con)
+    }
+
     return (
         <div>
             <NewExpense onAddExpense={addExpenseHandler}/>
-            <Expenses items={expenses}/>
+            <Expenses items={expenses} filterRuleOut={filter} filterRuleIn={FilterCondition}/>
         </div>
 
     );
