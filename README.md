@@ -1,4 +1,5 @@
 # Getting Started with Create React App
+![image](https://github.com/Anti-RakPro/RCG_expenses_list/assets/57501550/3d5d06cd-fbf4-4d6e-ad7b-67bad18bc0cb)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
